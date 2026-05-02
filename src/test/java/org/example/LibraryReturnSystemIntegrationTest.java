@@ -11,7 +11,6 @@ import static org.mockito.Mockito.when;
 public class LibraryReturnSystemIntegrationTest {
 
     private LibraryReturnSystem libraryReturnSystem;
-    private DateCalculator dateCalculator;
 
     @Mock
     private ILeapYearChecker mockLeapYearChecker;
@@ -19,7 +18,7 @@ public class LibraryReturnSystemIntegrationTest {
     @Before
     public void setup() {
         mockLeapYearChecker = mock(ILeapYearChecker.class);
-        dateCalculator = new DateCalculator(mockLeapYearChecker);
+        DateCalculator dateCalculator = new DateCalculator(mockLeapYearChecker);
 
         // Setup library system with a 14-day borrowing period and a $1.50 daily fine
         libraryReturnSystem = new LibraryReturnSystem(dateCalculator, 14, 1.50);
