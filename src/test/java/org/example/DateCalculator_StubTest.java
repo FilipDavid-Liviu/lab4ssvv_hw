@@ -12,7 +12,6 @@ public class DateCalculator_StubTest {
 
     @Before
     public void setup() {
-        // Driver injects the manual stub into the UUT
         dateCalculator = new DateCalculator(new LeapYearCheckerStub());
     }
 
